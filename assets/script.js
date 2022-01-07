@@ -12,13 +12,19 @@ var textContent;
 //saving text content with Local storage
 function save(event) {
     event.preventDefault();
+    //This line was created by the help of Chrissie Spalding. JEsUS made my brain hurt.
+    textContent = $(event.target).siblings().eq(1).val();
+    localStorage.setItem('textContent', JSON.stringify(textContent));
+    console.log(event)
 }
 
 //loading text to it's appropriate box with local storage
 function load() {
-
+    textContent = JSON.parse(localStorage.getItem('textContent'));
+    for (var i = 0; i < 9; i++) {
+        taskList.children().eq(i).children().eq(1).text(taskList[i]);
 };
-
+}
 
 //updating time using moment and walking the dom using query
 //setting variable time to check if each child using i is equal to the current time
