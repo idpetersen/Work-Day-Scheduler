@@ -1,17 +1,25 @@
 //setting global variables
 var timeStamp = moment();
 $("#timeStamp").text(timeStamp.format('MMMM Do YYYY'));
-var event = $('.event');
 var saveBtn = $('.save-btn');
 //variable timeNow is the current time
 //Needed to add HH format to check which specific hour it is (didn't work without formatting...)
 var timeNow = moment().format('HH');
 var taskList = $('.task-list');
 //Empty variable used to parse text data into an array
-var textContent;
+var textEl;
+//WHY IS THE TEXT CONTENT IN A TEXT AREA CALLED NAME?!?!?! wHy ThO
+var textArea; $('.textarea')
 //saving text content with Local storage
 function save(event) {
     event.preventDefault();
+    textEl
+
+    // texttent = $(event.target);
+    // localStorage.setItem('content',JSON.stringify(texttent));
+    // var savedText = JSON.stringify(texttent);
+    // localStorage.setItem("task", savedText);
+    // console.log(savedText)
 
 }
 
