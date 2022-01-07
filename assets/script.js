@@ -4,7 +4,8 @@ $("#timeStamp").text(timeStamp.format('MMMM Do YYYY'));
 var event = $('.event');
 var saveBtn = $('.save-btn');
 //variable timeNow is the current time
-var timeNow = moment();
+//Needed to add HH format to check which specific hour it is (didn't work without formatting...)
+var timeNow = moment().format('HH');
 var taskList = $('.task-list');
 //Empty variable used to parse text data into an array
 var textContent;
@@ -14,7 +15,9 @@ function save(event) {
 }
 
 //loading text to it's appropriate box with local storage
-function load() {};
+function load() {
+
+};
 
 
 //updating time using moment and walking the dom using query
@@ -26,7 +29,7 @@ function update() {
         console.log(time)
         if (time < timeNow) {
             taskList.children().eq(i).children().eq(1).addClass('past');
-        } else if (time == timeNow) {
+        } else if (time === timeNow) {
             taskList.children().eq(i).children().eq(1).addClass('present');
         } else {
             taskList.children().eq(i).children().eq(1).addClass('future')
