@@ -6,7 +6,7 @@ var taskList = $('.task-list')
 //variable timeNow is the current time
 //Needed to add HH format to check which specific hour it is (didn't work without formatting...)
 var timeNow = moment().format('HH');
-var taskList1 = $('.task-list1');
+var taskList1 = document.querySelector('.tast-list1')
 var taskList2 = $('.task-list2');
 var taskList3 = $('.task-list3');
 var taskList4 = $('.task-list4');
@@ -19,18 +19,24 @@ var saveBtn = $('.save-btn')
 //WHY IS THE TEXT CONTENT IN A TEXT AREA CALLED NAME?!?!?! wHy ThO
 
 //saving text content with Local storage
-function save(event){
-    event.preventDefault();
-    localStorage.setItem('save1', taskList1);
-    localStorage.setItem('save2', taskList2);
-    localStorage.setItem('save3', taskList3);
-    localStorage.setItem('save4', taskList4);
-    localStorage.setItem('save5', taskList5);
-    localStorage.setItem('save6', taskList6);
-    localStorage.setItem('save7', taskList7);
-    localStorage.setItem('save8', taskList8);
-    localStorage.setItem('save9', taskList9);
+function save9am() {
+    var text1 = tasklist1.value;
+    localStorage.setItem('9am',JSON.stringify(text1))
 }
+
+function load9am() {
+    text1.value = JSON.parse(localStorage.getItem('9am'))
+}
+//     localStorage.setItem('save1', JSON.stringify(taskList1));
+//     localStorage.setItem('save2', JSON.stringify(taskList2));
+//     localStorage.setItem('save3', JSON.stringify(taskList3));
+//     localStorage.setItem('save4', JSON.stringify(taskList4));
+//     localStorage.setItem('save5', JSON.stringify(taskList5));
+//     localStorage.setItem('save6', JSON.stringify(taskList6));
+//     localStorage.setItem('save7', JSON.stringify(taskList7));
+//     localStorage.setItem('save8', JSON.stringify(taskList8));
+//     localStorage.setItem('save9', JSON.stringify(taskList9));
+// }
 // var save = function() {
 //     var textAreaValue = $(this).val();
 //     console.log(textAreaValue)
@@ -40,17 +46,6 @@ function save(event){
 
 
 //loading text to it's appropriate box with local storage
-function load() {
-    localStorage.getItem('save1')
-    localStorage.getItem('save2')
-    localStorage.getItem('save3')
-    localStorage.getItem('save4')
-    localStorage.getItem('save5')
-    localStorage.getItem('save6')
-    localStorage.getItem('save7')
-    localStorage.getItem('save8')
-    localStorage.getItem('save9')
-};
 
 
 //updating time using moment and walking the dom using query
@@ -71,7 +66,7 @@ function update() {
 };
 
 //Functions called on page load
-load();
+get9am();
 update();
 //adding event listener to save button
 saveBtn.on('click', save)
