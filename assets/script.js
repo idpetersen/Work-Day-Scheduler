@@ -2,30 +2,54 @@
 var timeStamp = moment();
 $("#timeStamp").text(timeStamp.format('MMMM Do YYYY'));
 var saveBtn = $('.save-btn');
+var taskList = $('.task-list')
 //variable timeNow is the current time
 //Needed to add HH format to check which specific hour it is (didn't work without formatting...)
 var timeNow = moment().format('HH');
-var taskList = $('.task-list');
-//Empty variable used to parse text data into an array
-var textEl;
+var taskList1 = $('.task-list1');
+var taskList2 = $('.task-list2');
+var taskList3 = $('.task-list3');
+var taskList4 = $('.task-list4');
+var taskList5 = $('.task-list5');
+var taskList6 = $('.task-list6');
+var taskList7 = $('.task-list7');
+var taskList8 = $('.task-list8');
+var taskList9 = $('.task-list9');
+var saveBtn = $('.save-btn')
 //WHY IS THE TEXT CONTENT IN A TEXT AREA CALLED NAME?!?!?! wHy ThO
-var textArea; $('.textarea')
+
 //saving text content with Local storage
-function save(event) {
+function save(event){
     event.preventDefault();
-    textEl
-
-    // texttent = $(event.target);
-    // localStorage.setItem('content',JSON.stringify(texttent));
-    // var savedText = JSON.stringify(texttent);
-    // localStorage.setItem("task", savedText);
-    // console.log(savedText)
-
+    localStorage.setItem('save1', taskList1);
+    localStorage.setItem('save2', taskList2);
+    localStorage.setItem('save3', taskList3);
+    localStorage.setItem('save4', taskList4);
+    localStorage.setItem('save5', taskList5);
+    localStorage.setItem('save6', taskList6);
+    localStorage.setItem('save7', taskList7);
+    localStorage.setItem('save8', taskList8);
+    localStorage.setItem('save9', taskList9);
 }
+// var save = function() {
+//     var textAreaValue = $(this).val();
+//     console.log(textAreaValue)
+//     // localStorage.setItem('content', textEl);
+//     // console.log((localStorage.getItem('content'))
+// }
+
 
 //loading text to it's appropriate box with local storage
 function load() {
-
+    localStorage.getItem('save1')
+    localStorage.getItem('save2')
+    localStorage.getItem('save3')
+    localStorage.getItem('save4')
+    localStorage.getItem('save5')
+    localStorage.getItem('save6')
+    localStorage.getItem('save7')
+    localStorage.getItem('save8')
+    localStorage.getItem('save9')
 };
 
 
@@ -50,5 +74,4 @@ function update() {
 load();
 update();
 //adding event listener to save button
-saveBtn.on('click', save);
-console.log(saveBtn);
+saveBtn.on('click', save)
